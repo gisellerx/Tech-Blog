@@ -3,6 +3,7 @@ const { Project, User } = require('../models');
 const withAuth = require('../utils/auth');
 
 //all html routes are doing get method is reading
+//html endpoint 
 //http://localhost:3001/
 router.get('/', async (req, res) => {
   try {
