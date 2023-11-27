@@ -3,10 +3,10 @@ const router = require('express').Router();
 //http://localhost:3001/profile/admin
 router.get('/admin', (req, res) => {
 
-    res.render('admin',{user:"giselle", role:"administrator"})
+    res.render('admin',{users:"giselle", roles:"administrator"})
 })
 
-//http://localhost:3001/profile/admin
+//http://localhost:3001/profile/user
 router.get('/user', (req, res) => {
 
 })

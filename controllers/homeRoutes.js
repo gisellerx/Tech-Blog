@@ -3,7 +3,7 @@ const { Project, User } = require('../models');
 const withAuth = require('../utils/auth');
 
 //all html routes are doing get method is reading
-//html endpoint 
+//html
 //http://localhost:3001/
 router.get('/', async (req, res) => {
   try {
@@ -12,7 +12,7 @@ router.get('/', async (req, res) => {
       include: [
         {
           model: User,
-          attributes: ['name'],
+          attributes: ['username'],
         },
       ],
     });
@@ -41,7 +41,7 @@ router.get('/project/:id', async (req, res) => {
       include: [
         {
           model: User,
-          attributes: ['name'],
+          attributes: ['username'],
         },
       ],
     });
