@@ -1,8 +1,17 @@
 <div class="text-center">
-  <h2>{{title}}</h2>
+  <h2 id="title" data-id="{{id}}">{{title}}</h2>
   <p>{{contents}}</p>
   <p>Created by {{user.username}} on {{format_date date_created}}</p>
+  {{#if Comments}}
+  {{#each Comments}}
+  <p>{{body}}</p>
+  {{/each}}
+  {{/if}}
   <p>
-    <button class="btn btn-primary">Add comment</button>
+    <textarea name="" id="comment" cols="30" rows="10"></textarea>
+    <button class="btn btn-primary" id="commentbutton">Add comment</button>
+    <button class="btn btn-primary" id="updatebutton">Update</button>
   </p>
 </div>
+
+<script src="/js/comment.js"></script>

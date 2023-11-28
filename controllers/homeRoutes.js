@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Post, User } = require('../models');
+const { Post, User, Comment } = require('../models');
 const withAuth = require('../utils/auth');
 
 //all html routes are doing get method is reading
@@ -43,11 +43,15 @@ router.get('/post/:id', async (req, res) => {
           model: User,
           attributes: ['username'],
         },
+        {
+          model: Comment,
+          include: [User],
+        }
       ],
     });
 
     const post = postData.get({ plain: true });
-
+console.log(post);
     res.render('post', {
       ...post,
       logged_in: req.session.logged_in
